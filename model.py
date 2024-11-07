@@ -28,6 +28,7 @@ def _reduce_mean(x):
     return torch.sum(x) / nelem
 
 
+# The NB loss function reference: https://github.com/wangyh082/scBGEDA/blob/main/code/loss.py
 def NB(theta, y_pred, y_true, mask=False, debug=True, mean=False):
     eps = 1e-10
     scale_factor = 1.0
@@ -55,7 +56,7 @@ def NB(theta, y_pred, y_true, mask=False, debug=True, mean=False):
             final = torch.mean(final)
     return final
 
-
+# The ZINB loss function reference: https://github.com/wangyh082/scBGEDA/blob/main/code/loss.py
 def ZINB(pi, theta, y_pred, y_true, ridge_lambda=1.0, mean=True, mask=False, debug=False):
     eps = 1e-10
     scale_factor = 1.0
