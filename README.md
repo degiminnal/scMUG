@@ -109,7 +109,7 @@ python3 scMUG.py --dataset muraro --cluster_number 7 --n_gfm 5 --cutoffs 0.14,0.
 | model.py          | Autoencoder, including ZINB loss function and NB loss function |
 | scMUG.py          | Program entry function                                       |
 | utils.py          | Function tools, including data loader、visualization function、benchmark function、preprocessing method, and GFM related functions |
-| Tutorial.ipynb | Documentation describing the use of sMUG |
+| Tutorial.ipynb | Documentation describing the usage instructions for sMUG |
 | gcorr/\__init\__.py | The gcorr package used for calculating pearson correlation coefficient |
 | gcorr/gcorr.cu | Source code for compiling dynamic link libraries for computing pearson correlation coefficien |
 
