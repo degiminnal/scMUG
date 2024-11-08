@@ -10,7 +10,7 @@ Single-cell RNA sequencing (scRNA-seq) has revolutionized our understanding of c
 
 ![pipeline](./images/pipeline.png) 
 
-Flowchart of scMUG. (A) Raw scRNA-seq data was preprocessed with statistical filters. Gene co-expression network was established using filtered expression profiles. Core sub-graphs were extracted. GFMs(Gene Functional Modules) were identified in the core sub-graph. (B) Cell representations are established by ZINB-loss based autoencoders in every GFM respectively. (C) Constructing cell-cell global distribution similarity matrix and local density similarity matrix. (D) Cell clustering analysis by spectral clustering with the combination of global and local similarity.
+Flowchart of scMUG. (A) Raw scRNA-seq data was preprocessed with statistical filters. Gene co-expression network was established using filtered expression profiles. Core sub-graphs were extracted. GFMs(Gene Functional Modules) were identified. (B) Cell representations are established by ZINB-loss based autoencoders in every GFM respectively. (C) Constructing cell-cell global distribution similarity matrix and local density similarity matrix. (D) Cell clustering analysis by spectral clustering with the combination of global and local similarity.
 
 # Installation
 
