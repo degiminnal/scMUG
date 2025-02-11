@@ -14,7 +14,7 @@ def run():
     parser.add_argument("--repeat", default=3, type=int)
     parser.add_argument("--n_gfm", default=5, type=int)
     parser.add_argument("--cutoffs", default="0.14,0.14,0.15,0.14,0.14", type=str)
-    parser.add_argument("--epoch", default=100, type=int)
+    parser.add_argument("--epoch", default=50, type=int)
     parser.add_argument("--n_neighbour", default=3, type=int)
     parser.add_argument("--kmeans_times", default=20, type=int)
     parser.add_argument("--red_global", type=str) 
@@ -36,9 +36,8 @@ def run():
     print(f"\nDatabase: {dbname}\tCells: {expr_df.shape[0]}\tGenes: {expr_df.shape[1]}")
     expr_df = expr_df.astype(float)
     adata = preprocess(expr_df=expr_df, cell_type=cell_type, highly_genes=8000)
-    x, raw_x = adata.X, adata.raw.X
     y = lab2fac(adata.obs["cell_type"].to_numpy())
-    n_sample = x.shape[0]
+    n_sample = adata.X.shape[0]
     if cluster_number is None:
         cluster_number = len(set(y))
 
@@ -59,7 +58,7 @@ def run():
             set_seed(seed)
             batchSize = int(max(min(2 ** (n_sample ** 0.5 // 8 + 1), 64), 4))
             mask = adata.var_names.isin(gene_list)
-            input_data, target_data, = adata.X[:, mask], adata.raw[:, mask].X
+            input_data, target_data, = adata.X[:, mask], adata.X[:, mask]
             input_dim = input_data.shape[1]
             data_loader = get_data_loader(input_data, target_data, batch_size=batchSize)
             model = Autoencoder([input_dim, 512, 128, 32]).to(device)
@@ -88,7 +87,7 @@ def run():
         neighbourDistScore = np.array([np.array(
             [1 / np.log(np.var(dis[i, np.argpartition(dis[i], n_neighbour + 1)[1:n_neighbour + 1]]) + np.exp(1)) for i
              in range(n_sample)]) for dis in dist]) ** 0.5
-        mat2 = get_mat2(n_sample, neighbourDist, dist, neighbourDistScore, 8)
+        mat2 = get_mat2(n_sample, neighbourDist, dist, neighbourDistScore)
 
         for r in range(repeat):
             print(f"\nRound {r}")

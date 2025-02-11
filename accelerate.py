@@ -50,7 +50,7 @@ def recipMinSqrt(x, y, p=0.5):
     x_eps, y_eps = x+1e-5*(x==0), y+1e-5*(y==0)
     return np.min(np.vstack([x/y_eps,y/x_eps]), axis=0)**p
 
-def get_mat2(n_sample, neighbourDist, dist, neighbourDistScore, thread_num=8):
+def get_mat2(n_sample, neighbourDist, dist, neighbourDistScore):
     mat2 = np.zeros(shape=(n_sample, n_sample))
     nch, ng = neighbourDist.shape
     neighProbs = recipMinSqrt(neighbourDist.reshape([nch,1,ng]), dist)

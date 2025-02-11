@@ -32,6 +32,9 @@ Flowchart of scMUG. (A) Raw scRNA-seq data was preprocessed with statistical fil
    torchaudio==2.3.1+cu118
    torchvision==0.18.1+cu118
    umap-learn==0.5.6
+   CSCORE==1.0.0
+   locCSN==0.0.12
+   omicverse==1.6.10
    ```
 
 2. Installtion
@@ -112,6 +115,7 @@ python3 scMUG.py --dataset muraro --cluster_number 7 --n_gfm 5 --cutoffs 0.14,0.
 | Tutorial.ipynb | Documentation describing the usage instructions for sMUG |
 | gcorr/\__init\__.py | The gcorr package used for calculating pearson correlation coefficient |
 | gcorr/gcorr.cu | Source code for compiling dynamic link libraries for computing pearson correlation coefficien |
+| others | Others tools used in this work |
 
 # Result
 
