@@ -121,3 +121,6 @@ python3 scMUG.py --dataset muraro --cluster_number 7 --n_gfm 5 --cutoffs 0.14,0.
 
 The results are saved in the "./outputs/" folder, including the latent value, the predicted labels, and the benchmark results measured by ACC, ARI and NMI.
 
+# Citation
+
+Liang DM, Du PF. scMUG: Deep clustering analysis of single-cell RNA-seq data on multiple gene functional modules. Briefing in Bioinformatics. 
