@@ -123,4 +123,4 @@ The results are saved in the "./outputs/" folder, including the latent value, th
 
 # Citation
 
-[Liang D M, Du P F. scMUG: deep clustering analysis of single-cell RNA-seq data on multiple gene functional modules[J]. Briefings in Bioinformatics, 2025, 26(2)](https://academic.oup.com/bib/article/26/2/bbaf138/8106809)
+[De-Min Liang, Pu-Feng Du, scMUG: deep clustering analysis of single-cell RNA-seq data on multiple gene functional modules, Briefings in Bioinformatics, Volume 26, Issue 2, March 2025, bbaf138, https://doi.org/10.1093/bib/bbaf138](https://academic.oup.com/bib/article/26/2/bbaf138/8106809)
